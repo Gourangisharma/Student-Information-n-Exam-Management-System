@@ -1,0 +1,260 @@
+Student Information & Exam Management System - Test Examples
+============================================================
+
+This file contains example test scenarios demonstrating all features.
+
+EXAMPLE 1: Admin Complete Workflow
+-----------------------------------
+Input sequence:
+1           # Login
+admin       
+admin123    
+1           # Add student
+101
+Alice Johnson
+Computer Science
+5
+3           # Conduct exam
+101
+85
+90
+88
+92
+87
+4           # Search student
+101
+5           # Sort students
+2           # Descending order
+6           # Display all students
+8           # Exit
+
+Expected output:
+- Successful admin login
+- Student added: Roll 101, Name Alice Johnson
+- Marks entered successfully
+- Average calculated: 88.40
+- Grade assigned: A
+- Student search displays complete info
+- Sorted list shows students
+- All students displayed
+
+
+EXAMPLE 2: Teacher Workflow
+----------------------------
+Input sequence:
+1           # Login
+teacher1
+teacher123
+1           # Conduct exam
+102
+78
+82
+75
+80
+79
+2           # Search student
+102
+4           # Display all
+5           # Logout
+2           # Exit
+
+Expected output:
+- Successful teacher login (Mathematics)
+- Can conduct exams and enter marks
+- Can search students
+- Can display all students
+- Cannot add or update students (no menu option)
+
+
+EXAMPLE 3: Multiple Students & Sorting
+---------------------------------------
+Input sequence:
+1           # Login
+admin
+admin123
+1           # Add student 1
+101
+Alice Smith
+CS
+3
+1           # Add student 2
+102
+Bob Wilson
+EE
+3
+1           # Add student 3
+103
+Charlie Brown
+ME
+3
+3           # Enter marks for 101
+101
+85
+90
+88
+3           # Enter marks for 102
+102
+92
+95
+93
+3           # Enter marks for 103
+103
+75
+78
+80
+5           # Sort students
+2           # Descending
+6           # Display all
+8           # Exit
+
+Expected output:
+- Three students added
+- Marks entered for all three
+- Sorted list (descending):
+  1. Bob Wilson (102) - Avg: 93.33 - A
+  2. Alice Smith (101) - Avg: 87.67 - A
+  3. Charlie Brown (103) - Avg: 77.67 - B
+
+
+EXAMPLE 4: Update Student Details
+----------------------------------
+Input sequence:
+1           # Login
+admin
+admin123
+1           # Add student
+201
+John Doe
+Engineering
+4
+2           # Update student
+201
+3           # Update both
+John Smith
+Computer Science
+4           # Search student
+201
+8           # Exit
+
+Expected output:
+- Student added as John Doe, Engineering
+- Updated to John Smith, Computer Science
+- Search confirms updated details
+
+
+EXAMPLE 5: Error Handling
+--------------------------
+Input sequence:
+1           # Login
+admin
+wrong       # Wrong password
+1           # Try again
+admin
+admin123
+4           # Search non-existent
+999         # Student doesn't exist
+3           # Conduct exam
+101         # Student doesn't exist
+8           # Exit
+
+Expected output:
+- First login fails with error message
+- Second login succeeds
+- Search for 999 shows "Student not found"
+- Exam for 101 shows "Student not found"
+
+
+EXAMPLE 6: Grade Calculation Verification
+------------------------------------------
+Marks Range    Expected Grade
+90-100         A+
+80-89          A
+70-79          B
+60-69          C
+50-59          D
+0-49           F
+
+Test cases:
+Student 1: 95, 98, 93 → Avg 95.33 → A+
+Student 2: 85, 87, 82 → Avg 84.67 → A
+Student 3: 75, 78, 72 → Avg 75.00 → B
+Student 4: 65, 68, 62 → Avg 65.00 → C
+Student 5: 55, 58, 52 → Avg 55.00 → D
+Student 6: 45, 48, 42 → Avg 45.00 → F
+
+
+FEATURES DEMONSTRATED
+=====================
+
+1. ✓ Pointers & Dynamic Memory
+   - Dynamic arrays for marks
+   - Vectors of pointers
+   - Proper memory cleanup
+
+2. ✓ Constructors & Destructors
+   - Default, parameterized, copy constructors
+   - Virtual destructors
+   - Memory management
+
+3. ✓ Inheritance
+   - User → Admin, Teacher
+   - Proper inheritance hierarchy
+
+4. ✓ Virtual/Abstract Classes
+   - Pure virtual displayInfo()
+   - Polymorphic behavior
+
+5. ✓ Polymorphism
+   - Virtual functions
+   - Runtime dispatch
+
+6. ✓ Operator Overloading
+   - Assignment (=)
+   - Comparison (<, >)
+   - Stream insertion (<<)
+
+7. ✓ Templates
+   - Container<T>
+   - bubbleSort<T>
+
+8. ✓ Exception Handling
+   - Custom exceptions
+   - Try-catch blocks
+   - Error recovery
+
+9. ✓ All Required Features
+   - Add students
+   - Update students
+   - Conduct exams
+   - Search students
+   - Sort students
+   - Teacher/Admin login
+   - Data management
+
+
+COMPILATION & EXECUTION
+=======================
+
+Compile:
+    make
+
+Run:
+    ./student_management_system
+
+Clean:
+    make clean
+
+
+SUCCESS INDICATORS
+==================
+
+✓ Program compiles without warnings
+✓ All features accessible through menu
+✓ Role-based access working correctly
+✓ Input validation preventing invalid data
+✓ Exception handling preventing crashes
+✓ Memory management preventing leaks
+✓ Grade calculation accurate
+✓ Sorting working correctly
+✓ Search finding correct students
+✓ Professional UI with clear messages
