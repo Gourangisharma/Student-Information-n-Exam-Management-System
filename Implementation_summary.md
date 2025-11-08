@@ -91,11 +91,6 @@ A comprehensive, self-contained C++ program that implements a complete Student I
   - Compilation instructions
   - Usage guide
 
-- **demo_guide.txt**
-  - Step-by-step walkthrough
-  - All features demonstrated
-  - Example inputs
-
 - **test_examples.txt**
   - Comprehensive test scenarios
   - Expected outputs
@@ -105,11 +100,6 @@ A comprehensive, self-contained C++ program that implements a complete Student I
   - Complete project summary
   - Requirements fulfillment
   - Technical details
-
-### Configuration
-- **.gitignore**
-  - Excludes compiled binaries
-  - Excludes build artifacts
 
 ---
 
